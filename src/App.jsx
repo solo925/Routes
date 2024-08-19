@@ -1,4 +1,4 @@
-import { Link, useNavigate, useRoutes } from 'react-router-dom';
+import { useRoutes } from 'react-router-dom';
 import './App.css';
 import Layout from './Layout';
 import Comments from './pages/comments';
@@ -36,14 +36,13 @@ export function CustomRoutes() {
 
 function App() {
   
-  const navigate = useNavigate();
-  // const dispatch = dispatchEvent();
+
   return (
     <div className="App">
-      <Link to={"/recipe"}>go to recipes page</Link>
+      {/* <Link to={"/recipe"}>go to recipes page</Link>
       <Link to={"/comments"}>go to comments page</Link>
       <button onClick={()=>navigate('/recipe')}>recipes</button>
-      <button onClick={() => navigate('/comments')}>comments</button>
+      <button onClick={() => navigate('/comments')}>comments</button> */}
       
       {/* <Routes>
         <Route path='/recipe' element={ <RecipePage/>} />
