@@ -3,7 +3,8 @@ import useFetch from '../../hooks/use-fetch';
 
 function RecipePage() {
   const { loading, data, error } = useFetch('https://dummyjson.com/recipes');
-
+  console.log(data);
+  
   if (loading) {
     return <h4>Please wait, Fetching recipe...</h4>;
   }
@@ -12,7 +13,7 @@ function RecipePage() {
     return <h4>Error loading recipes: {error.message}</h4>;
   }
 
-  console.log(data);
+  // console.log(data);
 
   // Assuming that the data has a "recipes" property that is an array
   const recipes = Array.isArray(data) ? data : data.recipes || [];

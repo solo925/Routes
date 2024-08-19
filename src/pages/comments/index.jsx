@@ -8,7 +8,7 @@ function Comments() {
 
   if (error) return <h4>Error loading comments: {error.message}</h4>;
 
-  console.log(data);
+  // console.log(data);
 
   // Assuming that the data contains an array of comments directly or within a specific property
   const comments = Array.isArray(data) ? data : data.comments || [];
