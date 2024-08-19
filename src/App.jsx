@@ -1,15 +1,30 @@
 import { Link, useNavigate, useRoutes } from 'react-router-dom';
 import './App.css';
+import Layout from './Layout';
+import Comments from './pages/comments';
+import RecipeDetailsPage from './pages/Deatils';
 import RecipePage from './pages/recipes';
 
+  
+  
 
-function CustomeRoute() {
+export function CustomRoutes() {
   const element = useRoutes([
     {
-      path:"/recipe",element:<RecipePage/>   }
-  ])
-  return element
-}
+      path: '/',
+      element: <Layout />, // Parent layout component
+      children: [
+        { path: 'recipe', element: <RecipePage /> }, // Child route for RecipePage
+        { path: 'comments', element: <Comments /> }, // Child route for Comments
+        { path: 'recipe/:id', element: <RecipeDetailsPage /> }, // Child route for RecipeDetailsPage
+      ],
+    },
+  ]);
+
+  return element;
+};
+
+
 
 // learn these
 // useLocalStorage
@@ -36,7 +51,7 @@ function App() {
         <Route path='/recipe/:id' element={ <RecipeDetailsPage/>} />
       </Routes> */}
 
-      <CustomeRoute/>
+      <CustomRoutes/>
       
   
     </div>
